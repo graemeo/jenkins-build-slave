@@ -12,3 +12,13 @@ java -version
 
 apt-get install -y -q git
 git --version
+
+ssh-keygen -t rsa -f /home/vagrant/.ssh/github_rsa -C "ong.graeme@gmail.com" -N ""
+
+echo "Host github.com" >> /home/vagrant/.ssh/config
+echo "     IdentityFile ~/.ssh/github_rsa" >> /home/vagrant/.ssh/config
+cat /home/vagrant/.ssh/config
+
+chown vagrant /home/vagrant/.ssh/config
+chown vagrant /home/vagrant/.ssh/github_rsa*
+
